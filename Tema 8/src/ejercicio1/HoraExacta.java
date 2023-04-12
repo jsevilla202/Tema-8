@@ -1,20 +1,24 @@
 package ejercicio1;
 
-public class HoraExacta extends Hora{
-	int segundo;
+public class HoraExacta extends Hora {
+	protected int segundo;
+
 	HoraExacta(int hora, int minuto, int segundo) {
 		super(hora, minuto);
 		this.segundo = segundo;
 	}
-	
+
 	public void setSegundo(int segundo) {
-		this.segundo = segundo;
+		if (segundo >= 0 && segundo <= 59) {
+			this.segundo = segundo;
+		}
 	}
-	
-	void inc() {
+
+	void incs() {
 		segundo++;
-		if(segundo==60) {
-			
+		if (segundo == 60) {
+			segundo = 0;
+			super.incm();
 		}
 	}
 }

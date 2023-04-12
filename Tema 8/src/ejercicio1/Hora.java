@@ -3,27 +3,34 @@ package ejercicio1;
 public class Hora {
 	protected int hora;
 	protected int minuto;
-	
-	Hora(int hora, int minuto){
+
+	Hora(int hora, int minuto) {
 		this.hora = hora;
 		this.minuto = minuto;
 	}
-	
-	void inc() {
+
+	void incm() {
 		this.minuto++;
+		if (minuto == 60) {
+			minuto = 0;
+			hora++;
+			if (hora == 24) {
+				hora = 0;
+			}
+		}
 	}
-	
+
 	boolean setMinutos(int valor) {
 		boolean correcto = false;
-		if(valor>=0&&valor<=59) {
+		if (valor >= 0 && valor <= 59) {
 			correcto = true;
 		}
 		return correcto;
 	}
-	
+
 	boolean setHora(int valor) {
 		boolean correcto = false;
-		if(valor>=0&&valor<=23) {
+		if (valor >= 0 && valor <= 23) {
 			correcto = true;
 		}
 		return correcto;
@@ -31,7 +38,7 @@ public class Hora {
 
 	@Override
 	public String toString() {
-		return "Hora [hora=" + hora + ", minuto=" + minuto + "]";
+		return hora + ":" + minuto;
 	}
-	
+
 }
