@@ -13,12 +13,17 @@ public class HoraExacta extends Hora {
 			this.segundo = segundo;
 		}
 	}
-
+	
 	void incs() {
 		segundo++;
 		if (segundo == 60) {
 			segundo = 0;
 			super.incm();
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + ":" + segundo;
 	}
 }
