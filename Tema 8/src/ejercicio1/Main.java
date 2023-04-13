@@ -21,7 +21,7 @@ public class Main {
 			opcion = sc.nextInt();
 			switch (opcion) {
 			case 1:
-				int i = 0;
+				int i = 1;
 				while(i<=60) {
 					horaEC.inc();
 					i++;
