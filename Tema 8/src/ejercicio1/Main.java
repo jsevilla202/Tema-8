@@ -21,7 +21,11 @@ public class Main {
 			opcion = sc.nextInt();
 			switch (opcion) {
 			case 1:
-				horaEC.incm();
+				int i = 0;
+				while(i<=60) {
+					horaEC.inc();
+					i++;
+				}
 				break;
 			case 2:
 				System.out.print("Inserte el valor de los minutos: ");
@@ -42,7 +46,7 @@ public class Main {
 				segundo = sc.nextInt();
 				horaEC.setSegundo(segundo);
 			case 6:
-				horaEC.incs();
+				horaEC.inc();
 			case 7:
 				break;
 			}

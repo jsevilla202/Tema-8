@@ -1,11 +1,24 @@
 package ejercicio2;
 
-public class Tecnico extends Operario{
-
+/**
+ * Clase hijo de Operario
+ * 
+ * @author Jaime Sevilla
+ *
+ */
+public class Tecnico extends Operario {
+	/**
+	 * Constructor por defecto
+	 */
 	public Tecnico() {
 		super();
 	}
 
+	/**
+	 * Constructor con todos los parametros
+	 * 
+	 * @param nombre Nombre dado por el usuario
+	 */
 	public Tecnico(String nombre) {
 		super(nombre);
 	}
