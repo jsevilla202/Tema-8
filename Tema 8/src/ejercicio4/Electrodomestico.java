@@ -40,6 +40,7 @@ public class Electrodomestico {
 			String consumos = String.valueOf(consumo);
 			this.consumo = Consumo.valueOf(consumos);
 			this.peso = peso;
+			precioFinal();
 		}
 	}
 
