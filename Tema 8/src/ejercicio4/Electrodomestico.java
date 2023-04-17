@@ -1,9 +1,9 @@
 package ejercicio4;
 
 public class Electrodomestico {
-	private double precio;
-	private Color color;
-	private Consumo consumo;
+	protected int precio;
+	protected Color color;
+	protected Consumo consumo;
 
 	enum Consumo {
 		A, B, C, D, E, F
@@ -19,17 +19,17 @@ public class Electrodomestico {
 		super();
 		color = Color.valueOf("BLANCO");
 		consumo = Consumo.valueOf("F");
-		precio = 100;
+		precio = 100; 
 		peso = 5;
 	}
 
-	public Electrodomestico(double precio, double peso) {
+	public Electrodomestico(int precio, double peso) {
 		super();
 		this.precio = precio;
 		this.peso = peso;
 	}
 
-	public Electrodomestico(double precio, String color, char consumo, double peso) {
+	public Electrodomestico(int precio, String color, char consumo, double peso) {
 		super();
 		if (!(comprobarColor(color) && comprobarConsumoEnergetico(consumo))) {
 			this.precio = precio;
@@ -40,11 +40,10 @@ public class Electrodomestico {
 			String consumos = String.valueOf(consumo);
 			this.consumo = Consumo.valueOf(consumos);
 			this.peso = peso;
-			precioFinal();
 		}
 	}
 
-	public double getPrecio() {
+	public int getPrecio() {
 		return precio;
 	}
 
@@ -93,7 +92,7 @@ public class Electrodomestico {
 		return comprueba;
 	}
 
-	private void precioFinal() {
+	public void precioFinal() {
 		int precioF = 0;
 		String letra = String.valueOf(consumo);
 		switch (letra) {
@@ -126,7 +125,6 @@ public class Electrodomestico {
 		} else {
 			precioF += 100;
 		}
-
-		precio = precioF;
+		precio += precioF;
 	}
 }
